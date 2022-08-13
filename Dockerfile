@@ -1,23 +1,13 @@
-FROM node:14.20.0 as dependencies
-WORKDIR /my-project
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
+FROM node:14.17-alpine
 
-FROM node:14.20.0 as builder
-WORKDIR /my-project
-COPY . .
-COPY --from=dependencies /my-project/node_modules ./node_modules
+RUN mkdir -p /home/app/ && chown -R node:node /home/app
+WORKDIR /home/app
+COPY --chown=node:node ./my-project .
+
+USER node
+
+RUN yarn install --frozen-lockfile
 RUN yarn build
 
-FROM node:14.20.0 as runner
-WORKDIR /my-project
-ENV NODE_ENV production
-# If you are using a custom next.config.js file, uncomment this line.
-# COPY --from=builder /my-project/next.config.js ./
-COPY --from=builder /my-project/public ./public
-COPY --from=builder /my-project/.next ./.next
-COPY --from=builder /my-project/node_modules ./node_modules
-COPY --from=builder /my-project/package.json ./package.json
-
 EXPOSE 3000
-CMD ["yarn", "start"]
+CMD [ "yarn", "start" ]
