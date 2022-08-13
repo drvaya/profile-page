@@ -6,7 +6,7 @@ COPY --chown=node:node . .
 
 USER node
 
-RUN yarn install --frozen-lockfile
+RUN yarn install
 RUN yarn build
 
 EXPOSE 3000
