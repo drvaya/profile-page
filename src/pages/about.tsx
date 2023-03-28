@@ -40,8 +40,8 @@ function About({ jobs, education }: IProps) {
 				experience around Banking, e-Commerce, Media/Entertainment to name a few.
 				</p>
 				<p>
-				In my professional journey I have close to 16 years of IT experience and I work as a 
-				Senior Enterprise Architect for Cloud Application Modernization at VMware.
+				In my professional journey I have close to 16 years of IT experience and I work as a Solutions Architect
+				at PaloAlto Networks where I specialize into Prisma Cloud for securing Cloud Workloads.
 				</p>
 				<p>
 				I am a Google Developer Expert for Google Cloud Platform & Payments category and also 
