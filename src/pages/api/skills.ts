@@ -3,12 +3,13 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 export default (req: NextApiRequest, res: NextApiResponse) => {
 	const technologies = [
 		'Cloud Technologies',
+		'Cloud-native Security',
 		'Serverless',
 		'Containerization and Orchestration',
-		'Automation',
+		'Cloud Automation',
 		'Observability',
 	];
-	const frameworks = ['Kubernetes', 'Vue.js', 'Nuxt.js'];
+	const frameworks = ['Kubernetes', 'CNAPP', 'PrismaCloud'];
 	const databases = ['MySQL', 'PostgreSQL', 'Firebase'];
 	const cms = ['WordPress', 'Statamic'];
 	const various = ['SEO', 'Scrum', 'Agile', 'Jira', 'Confluence'];
